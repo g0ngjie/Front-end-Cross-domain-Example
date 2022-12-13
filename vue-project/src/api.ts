@@ -60,7 +60,7 @@ export function cors_user_del() {
 
 export function proxy_user_list() {
     return new Promise(resolve => {
-        const url = '/cors/user'
+        const url = '/proxy/user'
         fetch(url, { method: "post", body: JSON.stringify({ page: 1, size: 10 }) })
             .then(res => res.json())
             .then(resolve)

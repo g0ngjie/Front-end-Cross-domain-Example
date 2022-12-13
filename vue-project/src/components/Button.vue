@@ -14,7 +14,7 @@ const props = defineProps({
   type: String,
 });
 
-const textColor = $ref("text-gray-600");
+let textColor = $ref("text-gray-600");
 if (props.type === "danger") textColor = "text-red";
 else if (props.type === "info") textColor = "text-blue";
 else if (props.type === "success") textColor = "text-green";
