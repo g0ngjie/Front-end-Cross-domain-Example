@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Unocss from "unocss/vite";
 import { presetUno, presetAttributify } from 'unocss'
+import { resolve } from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,10 +15,11 @@ export default defineConfig({
       }
     }
   },
+  build: {
+    outDir: resolve(__dirname, '../project/src/main/resources/static')
+  },
   plugins: [
-    vue({
-      reactivityTransform: true
-    }),
+    vue(),
     Unocss({
       presets: [
         presetUno(),

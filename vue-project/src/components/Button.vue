@@ -8,14 +8,15 @@
   </button>
 </template>
 <script setup>
+import { ref } from "vue";
 const emit = defineEmits(["click"]);
 const props = defineProps({
   text: String,
   type: String,
 });
 
-let textColor = $ref("text-gray-600");
-if (props.type === "danger") textColor = "text-red";
-else if (props.type === "info") textColor = "text-blue";
-else if (props.type === "success") textColor = "text-green";
+const textColor = ref("text-gray-600");
+if (props.type === "danger") textColor.value = "text-red";
+else if (props.type === "info") textColor.value = "text-blue";
+else if (props.type === "success") textColor.value = "text-green";
 </script>

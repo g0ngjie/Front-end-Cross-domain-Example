@@ -28,6 +28,11 @@
           type="success"
           @click="send('proxy_user_list')"
         />
+        <Button
+          text="服务本地列表查询"
+          type="success"
+          @click="send('local_user_list')"
+        />
       </div>
     </div>
     <div w="100%" min-h-200px p-2 my-2 b-lightblue-3 border-gray-3 border-1>
@@ -43,6 +48,7 @@
 </template>
 <script setup lang="ts">
 import Button from "./components/Button.vue";
+import { ref } from "vue";
 import {
   user_info,
   user_list,
@@ -51,6 +57,7 @@ import {
   cors_user_list,
   cors_user_del,
   proxy_user_list,
+  local_user_list,
 } from "./api";
 
 const apis = {
@@ -61,11 +68,13 @@ const apis = {
   cors_user_list,
   cors_user_del,
   proxy_user_list,
+  local_user_list,
 };
 
-const jsonData = $ref("");
+const jsonData = ref("");
 async function send(api_name: string) {
+  // @ts-ignore
   const data = await apis[api_name]();
-  jsonData = JSON.stringify(data, null, 2);
+  jsonData.value = JSON.stringify(data, null, 2);
 }
 </script>

@@ -81,3 +81,17 @@ export function proxy_user_list() {
             .then(resolve)
     })
 }
+
+export function local_user_list() {
+    return new Promise(resolve => {
+        const url = '/cors/user'
+        fetch(url, {
+            method: "post", body: JSON.stringify({ page: 1, size: 10 }), headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        })
+            .then(res => res.json())
+            .then(resolve)
+    })
+}
