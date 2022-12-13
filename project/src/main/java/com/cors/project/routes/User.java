@@ -12,6 +12,7 @@ import java.util.List;
 @RequestMapping("/user")
 public class User {
 
+    @Autowired
     private UserMock userMock;
 
     @GetMapping("{id}")
@@ -20,7 +21,7 @@ public class User {
         return userMock.userInfo();
     }
 
-    @PostMapping("/")
+    @PostMapping()
     @ResponseBody
     public List<com.cors.project.vo.User> userInfo(@RequestBody PageDto params) {
         return userMock.userList();

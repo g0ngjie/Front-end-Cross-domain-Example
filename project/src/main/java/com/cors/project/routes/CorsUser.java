@@ -13,6 +13,7 @@ import java.util.List;
 @RequestMapping("/cors/user")
 public class CorsUser {
 
+    @Autowired
     private UserMock userMock;
 
     @GetMapping("{id}")
@@ -21,7 +22,7 @@ public class CorsUser {
         return userMock.userInfo();
     }
 
-    @PostMapping("/")
+    @PostMapping()
     @ResponseBody
     public List<User> userInfo(@RequestBody PageDto params) {
         return userMock.userList();
