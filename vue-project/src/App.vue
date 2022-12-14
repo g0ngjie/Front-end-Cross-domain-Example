@@ -5,7 +5,7 @@
       <div w="100%" flex flex-col gap-2>
         <Button text="用户信息" type="info" @click="send('cors_user_info')" />
         <Button
-          text="列表查询"
+          text="列表查询(cookie)"
           type="success"
           @click="send('cors_user_list')"
         />

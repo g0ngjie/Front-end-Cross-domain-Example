@@ -49,6 +49,7 @@ export function cors_user_list() {
     return new Promise(resolve => {
         const url = baseUrl + '/cors/user'
         fetch(url, {
+            credentials: 'include',
             method: "post", body: JSON.stringify({ page: 1, size: 10 }), headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
