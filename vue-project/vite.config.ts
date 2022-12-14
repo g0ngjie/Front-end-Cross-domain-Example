@@ -16,6 +16,7 @@ export default defineConfig({
     }
   },
   build: {
+    emptyOutDir: true,
     outDir: resolve(__dirname, '../project/src/main/resources/static')
   },
   plugins: [

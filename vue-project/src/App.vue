@@ -28,11 +28,6 @@
           type="success"
           @click="send('proxy_user_list')"
         />
-        <Button
-          text="服务本地列表查询"
-          type="success"
-          @click="send('local_user_list')"
-        />
       </div>
     </div>
     <div w="100%" min-h-200px p-2 my-2 b-lightblue-3 border-gray-3 border-1>
@@ -57,7 +52,6 @@ import {
   cors_user_list,
   cors_user_del,
   proxy_user_list,
-  local_user_list,
 } from "./api";
 
 const apis = {
@@ -68,7 +62,6 @@ const apis = {
   cors_user_list,
   cors_user_del,
   proxy_user_list,
-  local_user_list,
 };
 
 const jsonData = ref("");
