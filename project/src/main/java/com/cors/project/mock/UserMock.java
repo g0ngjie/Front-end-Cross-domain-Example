@@ -13,17 +13,18 @@ import java.util.stream.Collectors;
 public class UserMock {
 
     public List<User> userList() {
-        List<User> users = Arrays.asList(
-                "张三", "里斯", "王五", "赵六",
-                "xxx", "yyy"
-        ).stream().map(name -> {
-            User user = new User();
-            user.setName(name);
-            user.setCity("Shanghai");
-            user.setGender(new Random().nextInt(1));
-            user.setAge(new Random().nextInt(18) + 1);
-            return user;
-        }).collect(Collectors.toList());
+        List<User> users = Arrays
+                .asList("张三", "里斯", "王五", "赵六", "xxx", "yyy")
+                .stream()
+                .map(name -> {
+                    User user = new User();
+                    user.setName(name);
+                    user.setCity("Shanghai");
+                    user.setGender(new Random().nextInt(1));
+                    user.setAge(new Random().nextInt(18) + 1);
+                    return user;
+                })
+                .collect(Collectors.toList());
         return users;
     }
 
